@@ -3,11 +3,7 @@ compiler:
     - clang++
     - g++
 
-before_install:
-
-install:
-  - export CXXFLAGS="-g -std=c++03"; fi
-  - make CXXFLAGS=${CXXFLAGS}
-
 script:
+  - export CXXFLAGS="-g -std=c++03"
+  - make CXXFLAGS=${CXXFLAGS}
   - ./main
