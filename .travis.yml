@@ -1,0 +1,13 @@
+language: cpp
+compiler:
+    - clang++
+    - g++
+
+before_install:
+
+install:
+  - export CXXFLAGS="-g -std=c++03"; fi
+  - make CXXFLAGS=${CXXFLAGS}
+
+script:
+  - ./main
