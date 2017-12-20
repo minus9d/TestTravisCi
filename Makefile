@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -W -Wall -std=c++14
+CXXFLAGS = -W -Wall -std=c++11
 TARGET = main
 
 $(TARGET): main.cpp
