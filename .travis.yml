@@ -1,7 +1,15 @@
 language: cpp
-compiler:
-    - clang++
-    - g++
+
+matrix:
+  include:
+  - compiler: clang++
+  - compiler: g++
+    apt:
+      sources:
+        - ubuntu-toolchain-r-test
+      packages:
+        - g++-5
+        - gcc-5
 
 script:
   - make CXX=${CXX}
