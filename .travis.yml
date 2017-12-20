@@ -1,15 +1,22 @@
+# reference: https://docs.travis-ci.com/user/languages/cpp/
+
 language: cpp
 
 matrix:
   include:
   - compiler: clang++
   - compiler: g++
-    apt:
-      sources:
-        - ubuntu-toolchain-r-test
-      packages:
-        - g++-5
-        - gcc-5
+    addons:
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
+        packages:
+          - g++-5
+    env:
+      - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+
+before_install:
+   - eval "${MATRIX_EVAL}"
 
 script:
   - make CXX=${CXX}
