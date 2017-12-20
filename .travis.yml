@@ -4,6 +4,6 @@ compiler:
     - g++
 
 script:
-  - export CXXFLAGS="-g -std=c++03"
-  - make CXXFLAGS=${CXXFLAGS}
+  - export CXXFLAGS="-g -std=c++11"
+  - make CXXFLAGS="${CXXFLAGS}"
   - ./main
